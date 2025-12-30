@@ -28,10 +28,12 @@ This project generates Spring Boot–style plain text logs with:
    	b. Keep last N files
 6. Infinite traffic generation (Infinite log generation cycles with multiple threads running parallely to control speed of log generation.)
 7. Log creation controls using environment variables.
+   ```
    a. NO_OF_TRANSACTIONS_PER_CYCLE=5000 -Transactions to create in cycle.
    b. NO_OF_THREADS_PER_CYCLE=3 -Number of threads running per cycle.
    c. MAX_LOG_SIZE=1 -Max possible size of log file in MB
-   d. BACKUP_COUNT=2 -How many backup to store. 
+   d. BACKUP_COUNT=2 -How many backup to store.
+   ``` 
 
 
 **How It Works:**
@@ -48,19 +50,21 @@ This project generates Spring Boot–style plain text logs with:
 
 **How to use**
 
-1. In Python VEnv. 
+1. In Python VEnv.
+   ```
    a. Create python virtual environment and activate it. 
    b. Install the dependancies using pip.
    c. Set environment variable in activate file in VEnv. 
    d. Run the main.py.
-   
-3. Using docker
-	a. Create docker image using docker build:
+   ```
+2. Using docker
+
+	```a. Create docker image using docker build:
 
 	```bash
  	docker build -t <image-name> .
  	```
 
-	b. Run the container using docker run. You can apply the environment variables as well as listed above. 
+	b. Run the container using docker run. You can apply the environment variables as well as listed above. ```
 
 
