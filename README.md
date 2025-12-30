@@ -28,8 +28,8 @@ This project generates Spring Boot–style plain text logs with:
    	b. Keep last N files
 6. Infinite traffic generation (Infinite log generation cycles with multiple threads running parallely to control speed of log generation.)
 7. Log creation controls using environment variables.
-   a. NO_OF_TRANSACTIONS_PER_CYCLE=5000 -Transactions to create in cycle. 
-   b. NO_OF_THREADS_PER_CYCLE=3 -Number of threads running per cycle. 
+   a. NO_OF_TRANSACTIONS_PER_CYCLE=5000 -Transactions to create in cycle.
+   b. NO_OF_THREADS_PER_CYCLE=3 -Number of threads running per cycle.
    c. MAX_LOG_SIZE=1 -Max possible size of log file in MB
    d. BACKUP_COUNT=2 -How many backup to store. 
 
