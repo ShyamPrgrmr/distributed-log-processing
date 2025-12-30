@@ -32,7 +32,7 @@ This project generates Spring Boot–style plain text logs with:
    a. NO_OF_TRANSACTIONS_PER_CYCLE=5000 -Transactions to create in cycle.
    b. NO_OF_THREADS_PER_CYCLE=3 -Number of threads running per cycle.
    c. MAX_LOG_SIZE=1 -Max possible size of log file in MB
-   d. BACKUP_COUNT=2 -How many backup to store.
+   d. BACKUP_COUNT=2 -How many backup of log file to store.
    ``` 
 
 
@@ -61,7 +61,33 @@ This project generates Spring Boot–style plain text logs with:
 	```
 	a. Create docker image using docker build:
  		docker build -t <image-name> .
-	b. Run the container using docker run. You can apply the environment variables as well as listed above.
+	b. Run the container using docker run. You can apply the environment variables as listed above.
  	```
 
 
+**Project Structure**
+```bash
+.
+├── csv
+│   ├── api_gateway.csv
+│   ├── authentication_service.csv
+│   ├── fraud_detection.csv
+│   ├── ledger_service.csv
+│   ├── notification_service.csv
+│   ├── payment_processor.csv
+│   ├── reporting_service.csv
+│   ├── risk_engine.csv
+│   └── settlement.csv
+├── logs
+│   ├── ...
+├── appLogger.py
+├── csvHelper.py
+├── Dockerfile
+├── filters.py
+├── logger.py
+├── main.py
+├── requirements.txt
+├── setup.py
+├── tracing.py
+└── transactionQueue.py
+```
