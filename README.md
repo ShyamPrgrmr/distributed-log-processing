@@ -2,16 +2,14 @@
 
 A production-grade log generator that simulates real payment gateway distributed systems behavior using Python.
 This project generates Spring Boot–style plain text logs with:
-✅ Consistent traceId across services
-✅ Different spanId per component
-✅ Transaction-level correlation (paymentId, accountId, etc.)
-✅ Cascading flows across components
-✅ Log rotation (size-based)
-✅ Dockerized execution
-✅ CSV-driven log messages
-✅ Infinite traffic simulation
 
-Designed for observability demos, ELK/Loki testing, SRE practice.
+1. Consistent traceId across services
+2. Different spanId per component
+3. Transaction-level correlation (paymentId, accountId, etc.)
+4. Cascading flows across components
+5. Log rotation (size-based)
+6. CSV-driven log messages
+7. Infinite traffic simulation
 
 
 **Features**
@@ -28,7 +26,12 @@ Designed for observability demos, ELK/Loki testing, SRE practice.
 5. Log rotation
 	a. Rotate when file > 1 MB
    	b. Keep last N files
-6. Infinite traffic generation
+6. Infinite traffic generation (Infinite log generation cycles with multiple threads running parallely to control speed of log generation.)
+7. Log creation controls using environment variables.
+   a. NO_OF_TRANSACTIONS_PER_CYCLE=5000 -Transactions to create in cycle. 
+   b. NO_OF_THREADS_PER_CYCLE=3 -Number of threads running per cycle. 
+   c. MAX_LOG_SIZE=1 -Max possible size of log file in MB
+   d. BACKUP_COUNT=2 -How many backup to store. 
 
 
 **How It Works:**
@@ -42,3 +45,17 @@ Designed for observability demos, ELK/Loki testing, SRE practice.
 6. Writes to its own log file
 7. Logs rotate automatically at 1 MB
 8. The cycle repeats infinitely
+
+**How to use**
+
+1. In Python VEnv. 
+   a. Create python virtual environment and activate it. 
+   b. Install the dependancies using pip.
+   c. Set environment variable in activate file in VEnv. 
+   d. Run the main.py.
+   
+3. Using docker
+	a. Create docker image using
+		> 2025-12-30 19:05:12.f INFO  20062 --- [api_gateway-thread-1-0] api_gateway [traceId=1e7f988887ca4d39a56720ff48d32439 spanId=dec61aa3724a4c28 paymentId=pay_f1889166] : Request validation failed
+
+
