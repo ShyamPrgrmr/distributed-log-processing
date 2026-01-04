@@ -14,7 +14,7 @@ def normal_app_logger(name="app"):
     formatter = logging.Formatter(
         "%(asctime)s %(levelname)-5s %(process)d --- "
         "[%(threadName)s] %(name)s : %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S.%f"
+        datefmt="%Y-%m-%d %H:%M:%S"
     )
 
     console_handler.setFormatter(formatter)
