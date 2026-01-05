@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     ruby ruby-dev build-essential \
     && gem install fluentd --no-document
 
-COPY /conf/fluent.conf /etc/fluent/fluent.conf 
+COPY /etc/fluent/fluent.conf /etc/fluent/fluent.conf 
+
+COPY /etc/fluent/conf.d/*.conf /etc/fluent/conf.d/
 
 USER fluentd
 

@@ -35,7 +35,7 @@ def setup_logger(component):
         "[traceId=%(traceId)s spanId=%(spanId)s "
         "paymentId=%(paymentId)s] : "
         "%(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S.%f"
+        datefmt="%Y-%m-%d %H:%M:%S"
     )
 
     handler.setFormatter(formatter)
