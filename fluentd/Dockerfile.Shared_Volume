@@ -14,4 +14,6 @@ USER fluentd
 
 RUN mkdir -p /tmp/logs
 
+RUN mkdir -p /tmp/pos
+
 CMD ["fluentd", "-c", "/etc/fluent/fluent.conf"]

@@ -16,6 +16,7 @@ services:
       dockerfile: Dockerfile.Shared_Volume  
     volumes:
       - logs-storage:/tmp/logs:ro
+      - fluentd-pos:/tmp/pos:rw
     networks:
       - logs-network
 
@@ -26,3 +27,4 @@ networks:
 volumes:
   logs-storage:
     external: true
+  fluentd-pos:
