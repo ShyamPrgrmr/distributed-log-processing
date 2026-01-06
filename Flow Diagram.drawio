@@ -4,9 +4,6 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="nyDg6I2jR9YtzfBowJj2-76" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Shared Docker Volume" vertex="1">
-          <mxGeometry height="80" width="120" x="290" y="400" as="geometry" />
-        </mxCell>
         <mxCell id="nyDg6I2jR9YtzfBowJj2-78" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Fluentd (log Collector)" vertex="1">
           <mxGeometry height="60" width="120" x="290" y="555" as="geometry" />
         </mxCell>
@@ -62,9 +59,6 @@
         <mxCell id="nyDg6I2jR9YtzfBowJj2-87" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start; color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;/app/logs&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="90" x="50" y="492.5" as="geometry" />
         </mxCell>
-        <mxCell id="nyDg6I2jR9YtzfBowJj2-88" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start; background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre; color: rgb(204, 204, 204);&quot;&gt;&lt;font color=&quot;#915d47&quot;&gt;&lt;span style=&quot;caret-color: rgb(145, 93, 71);&quot;&gt;logs-storage&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="90" x="305" y="450" as="geometry" />
-        </mxCell>
         <mxCell id="nyDg6I2jR9YtzfBowJj2-89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start; background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre; color: rgb(204, 204, 204);&quot;&gt;&lt;font color=&quot;#915d47&quot;&gt;&lt;span style=&quot;caret-color: rgb(145, 93, 71);&quot;&gt;/tmp/logs&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="90" x="305" y="615" as="geometry" />
         </mxCell>
@@ -72,6 +66,36 @@
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="414" y="585" as="sourcePoint" />
             <mxPoint x="500" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-2" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="80" width="120" x="290" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="nyDg6I2jR9YtzfBowJj2-76" parent="FOSkRB0WnEa7TQ8puaKr-2" style="rounded=0;whiteSpace=wrap;html=1;" value="Shared Docker Volume" vertex="1">
+          <mxGeometry height="80" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="nyDg6I2jR9YtzfBowJj2-88" parent="FOSkRB0WnEa7TQ8puaKr-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start; background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre; color: rgb(204, 204, 204);&quot;&gt;&lt;font color=&quot;#915d47&quot;&gt;&lt;span style=&quot;caret-color: rgb(145, 93, 71);&quot;&gt;logs-storage&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="15" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-3" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="80" width="120" x="80" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-4" parent="FOSkRB0WnEa7TQ8puaKr-3" style="rounded=0;whiteSpace=wrap;html=1;" value="Position file Docker Volume" vertex="1">
+          <mxGeometry height="80" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-5" parent="FOSkRB0WnEa7TQ8puaKr-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start; background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre; color: rgb(204, 204, 204);&quot;&gt;&lt;div style=&quot;background-color: rgb(31, 31, 31); line-height: 18px; color: rgb(204, 204, 204);&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="15" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-6" parent="FOSkRB0WnEa7TQ8puaKr-3" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start; color: rgb(204, 204, 204); background-color: rgb(31, 31, 31); font-family: Menlo, Monaco, &amp;quot;Courier New&amp;quot;, monospace; line-height: 18px; white-space: pre;&quot;&gt;&lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;fluentd-pos&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="90" x="15" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-7" edge="1" parent="1" source="FOSkRB0WnEa7TQ8puaKr-4" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="nyDg6I2jR9YtzfBowJj2-78" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="585" />
+            </Array>
+            <mxPoint x="200" y="585" as="sourcePoint" />
+            <mxPoint x="290" y="585" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
