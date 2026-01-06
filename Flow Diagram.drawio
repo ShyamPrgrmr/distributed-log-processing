@@ -78,7 +78,7 @@
           <mxGeometry height="30" width="90" x="15" y="50" as="geometry" />
         </mxCell>
         <mxCell id="FOSkRB0WnEa7TQ8puaKr-3" connectable="0" parent="1" style="group" value="" vertex="1">
-          <mxGeometry height="80" width="120" x="80" y="545" as="geometry" />
+          <mxGeometry height="80" width="120" x="20" y="545" as="geometry" />
         </mxCell>
         <mxCell id="FOSkRB0WnEa7TQ8puaKr-4" parent="FOSkRB0WnEa7TQ8puaKr-3" style="rounded=0;whiteSpace=wrap;html=1;" value="Position file Docker Volume" vertex="1">
           <mxGeometry height="80" width="120" as="geometry" />
@@ -91,11 +91,14 @@
         </mxCell>
         <mxCell id="FOSkRB0WnEa7TQ8puaKr-7" edge="1" parent="1" source="FOSkRB0WnEa7TQ8puaKr-4" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="nyDg6I2jR9YtzfBowJj2-78" value="">
           <mxGeometry height="100" relative="1" width="100" as="geometry">
-            <Array as="points">
-              <mxPoint x="240" y="585" />
-            </Array>
+            <Array as="points" />
             <mxPoint x="200" y="585" as="sourcePoint" />
             <mxPoint x="290" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FOSkRB0WnEa7TQ8puaKr-9" connectable="0" parent="FOSkRB0WnEa7TQ8puaKr-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Read/Writes" vertex="1">
+          <mxGeometry relative="1" x="0.2296" y="-2" as="geometry">
+            <mxPoint x="-22" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
