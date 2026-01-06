@@ -1,0 +1,1 @@
+2026-01-06 03:59:01.231576713 +0000 payment_processor.logs: {"message":"2026-01-06 03:59:01 WARNING 1 --- [payment_processor-thread-1-1] payment_processor [traceId=4b2d28da233c427cbc57ffb94e5064a4 spanId=ce807c996b264039 paymentId=pay_a0e12b25] : Payment declined by issuer"}

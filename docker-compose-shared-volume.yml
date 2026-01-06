@@ -8,7 +8,7 @@ services:
     env_file:
       - ./loggenerator/.env
     environment:
-      - COMPONENT_TO_USE=api_gateway,payment_processor
+      - COMPONENT_TO_USE=payment_processor
 
   fluentd:
     build:
@@ -16,6 +16,8 @@ services:
       dockerfile: Dockerfile.Shared_Volume  
     volumes:
       - logs-storage:/tmp/logs:ro
+    networks:
+      - logs-network
 
 networks:
   logs-network:
