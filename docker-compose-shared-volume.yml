@@ -20,6 +20,40 @@ services:
     networks:
       - logs-network
 
+  kafka-controller-1:
+    image: apache/kafka:latest
+    container_name: kafka-controller-1
+    hostname: kafka-controller-1
+
+    environment:
+      KAFKA_NODE_ID: 1
+
+    volumes:
+      - ./kafka/data/kafka-controller-1:/tmp/kraft-combined-logs
+    
+    env_file:
+      - ./kafka/conf/.controller.env
+
+    networks:
+      - logs-network
+
+  kafka-broker-1:
+    image: apache/kafka:latest
+    container_name: kafka-broker-1
+    hostname: kafka-broker-1
+
+    volumes:
+      - ./kafka/data/kafka-broker-1:/tmp/kraft-broker-logs
+
+    environment:
+      KAFKA_NODE_ID: 2
+    
+    env_file:
+      - ./kafka/conf/.broker.env
+
+    networks:
+      - logs-network
+
 networks:
   logs-network:
     external: true
