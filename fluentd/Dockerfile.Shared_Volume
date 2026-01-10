@@ -6,14 +6,22 @@ RUN apt-get update && apt-get install -y \
     ruby ruby-dev build-essential \
     && gem install fluentd --no-document
 
+RUN gem install fluent-plugin-kafka --no-document
+
 COPY /etc/fluent/fluent.conf /etc/fluent/fluent.conf 
 
 COPY /etc/fluent/conf.d/*.conf /etc/fluent/conf.d/
 
-USER fluentd
+COPY /etc/fluent/output.conf.template /etc/fluent/output.conf.template
+
+COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
+#USER fluentd
 
 RUN mkdir -p /tmp/logs
 
 RUN mkdir -p /tmp/pos
 
-CMD ["fluentd", "-c", "/etc/fluent/fluent.conf"]
+ENTRYPOINT ["/entrypoint.sh"]

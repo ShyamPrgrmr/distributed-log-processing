@@ -19,6 +19,8 @@ services:
       - fluentd-pos:/tmp/pos:rw
     networks:
       - logs-network
+    env_file:
+      - ./fluentd/.env
 
   kafka-controller-1:
     image: apache/kafka:latest
@@ -27,6 +29,8 @@ services:
 
     environment:
       KAFKA_NODE_ID: 1
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-controller-1:9092
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka-controller-1:9093
 
     volumes:
       - ./kafka/data/kafka-controller-1:/tmp/kraft-combined-logs
@@ -47,6 +51,8 @@ services:
 
     environment:
       KAFKA_NODE_ID: 2
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker-1:9092
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka-controller-1:9093
     
     env_file:
       - ./kafka/conf/.broker.env

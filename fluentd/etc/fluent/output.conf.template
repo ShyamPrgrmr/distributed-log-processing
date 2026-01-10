@@ -1,0 +1,13 @@
+<match *.logs>
+  @type kafka2
+  brokers __KAFKA_BROKERS__
+  topic __KAFKA_TOPIC__
+  message_key application
+
+  required_acks 1
+  compression_codec gzip
+
+  <format>
+    @type json
+  </format>
+</match>
