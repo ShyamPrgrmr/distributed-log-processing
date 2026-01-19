@@ -1,8 +1,6 @@
 services:
   log-generator-api_gateway:
-    build: 
-      context: ./loggenerator
-      dockerfile: Dockerfile.Shared_Volume
+    image: logsinfra-log-generator-api_gateway:latest
     volumes:
       - logs-storage:/app/logs:rw
     env_file:
@@ -12,8 +10,7 @@ services:
 
   fluentd:
     build:
-      context: ./fluentd
-      dockerfile: Dockerfile.Shared_Volume  
+      context: ./fluentd 
     volumes:
       - logs-storage:/tmp/logs:ro
       - fluentd-pos:/tmp/pos:rw
@@ -56,6 +53,16 @@ services:
     
     env_file:
       - ./kafka/conf/.broker.env
+
+    networks:
+      - logs-network
+
+  logstash:
+    build: 
+      context: ./logstash
+    
+    env_file:
+      - ./logstash/.env
 
     networks:
       - logs-network

@@ -1,0 +1,10 @@
+api.http.host: "0.0.0.0"
+
+
+#performance
+pipeline.workers: 2
+pipeline.batch.size: 125
+
+#data queing
+queue.type: persisted
+queue.max_bytes: 4gb

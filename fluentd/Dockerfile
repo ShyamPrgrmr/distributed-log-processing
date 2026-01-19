@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-RUN useradd -m fluentd
-
 RUN apt-get update && apt-get install -y \
     ruby ruby-dev build-essential \
     && gem install fluentd --no-document
