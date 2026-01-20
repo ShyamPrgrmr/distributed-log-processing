@@ -1,0 +1,33 @@
+TO CHECK NODES:
+
+/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka-controller-1:9092
+
+TO CREATE TOPIC : 
+
+/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka-controller-1:9092 --create --topic <topic-name> --partitions 3 --replication-factor 1
+
+TOPIC LIST : 
+
+/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka-controller-1:9092 --list
+
+
+DELETE TOPIC
+
+/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka-controller-1:9092 --delete --topic persistence-test
+
+
+Reading 1st message from topic ::
+
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka-controller-1:9092 --topic payment-gateway-logs-topic-fluentd-to-logstash --from-beginning --max-messages 1
+
+
+List consumer groups
+
+/opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server kafka-controller-1:9092 --list
+
+
+Describe consumer group
+
+/opt/kafka/bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group <<group name>>
+
+
