@@ -9,6 +9,8 @@ services:
       - COMPONENT_TO_USE=payment_processor
 
   fluentd:
+    depends_on:
+      - kafka-broker-1
     build:
       context: ./fluentd 
     volumes:
@@ -43,6 +45,9 @@ services:
     container_name: kafka-broker-1
     hostname: kafka-broker-1
 
+    depends_on:
+      - kafka-controller-1
+
     volumes:
       - ./kafka/data/kafka-broker-1:/tmp/kraft-broker-logs
 
@@ -58,6 +63,8 @@ services:
       - logs-network
 
   logstash:
+    depends_on:
+      - kafka-broker-1
     build: 
       context: ./logstash
     
@@ -67,6 +74,32 @@ services:
     networks:
       - logs-network
 
+  es-coord:
+    depends_on:
+      - es-data
+    container_name: es-coord
+    build: 
+      context: ./elasticsearch/coordination_node
+    env_file:
+      - ./elasticsearch/coordination_node/.env
+    environment:
+      - node.name=es-coord
+    networks:
+      - logs-network
+
+  es-data:
+    container_name: es-data
+    build: 
+      context: ./elasticsearch/data_node
+    env_file:
+      - ./elasticsearch/data_node/.env
+    environment:
+      - node.name=es-data
+    networks:
+      - logs-network
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+
 networks:
   logs-network:
     external: true
@@ -75,3 +108,5 @@ volumes:
   logs-storage:
     external: true
   fluentd-pos:
+  es-data:
+    external: true

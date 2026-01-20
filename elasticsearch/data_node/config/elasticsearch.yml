@@ -1,0 +1,5 @@
+network.host: 0.0.0.0
+transport.host: 0.0.0.0
+node.roles: [ data, master ]
+cluster.name: payment-logs-cluster
+path.data: /usr/share/elasticsearch/data

@@ -1,0 +1,5 @@
+network.host: 0.0.0.0
+transport.host: 0.0.0.0
+http.port: 9200
+node.roles: []
+cluster.name: payment-logs-cluster
