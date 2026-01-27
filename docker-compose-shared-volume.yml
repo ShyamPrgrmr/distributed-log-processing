@@ -72,6 +72,10 @@ services:
     env_file:
       - ./logstash/.env
 
+    environment:
+      - ES_CO_NODES=http://es-coord-1:9200
+      - KAFKA_BROKERS=kafka-broker-1:9092
+
     networks:
       - logs-network
 
