@@ -65,6 +65,7 @@ services:
   logstash:
     depends_on:
       - kafka-broker-1
+      - es-coord
     build: 
       context: ./logstash
     
@@ -86,6 +87,18 @@ services:
       - node.name=es-coord
     networks:
       - logs-network
+
+  es-init:
+    build: 
+      context: ./elasticsearch/elasticsearch-init
+    container_name: es-init
+    depends_on:
+      - es-coord
+    environment:
+      - ES_HOST=http://es-coord:9200
+    networks:
+      - logs-network
+    restart: "no"
 
   es-data:
     container_name: es-data

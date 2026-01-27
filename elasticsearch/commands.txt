@@ -1,0 +1,8 @@
+To check health of cluster
+
+curl localhost:9200/_cluster/health?pretty
+
+
+
+
+
