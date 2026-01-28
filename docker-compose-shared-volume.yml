@@ -1,14 +1,16 @@
 services:
-  log-generator-api_gateway:
-    image: logsinfra-log-generator-api_gateway:latest
-    volumes:
+  logs-generator:
+    image: shyamya/logs-generator:latest
+    container_name: logs-generator
+    volumes:  
       - logs-storage:/app/logs:rw
     env_file:
       - ./loggenerator/.env
     environment:
-      - COMPONENT_TO_USE=payment_processor
+      - COMPONENT_TO_USE=payment_processor,api_gateway
 
   fluentd:
+    container_name: fluentd
     depends_on:
       - kafka-broker-1
     build:
@@ -63,9 +65,8 @@ services:
       - logs-network
 
   logstash:
-    depends_on:
-      - kafka-broker-1
-      - es-coord
+    container_name: logstash
+    
     build: 
       context: ./logstash
     
@@ -116,6 +117,19 @@ services:
       - logs-network
     volumes:
       - es-data:/usr/share/elasticsearch/data
+
+  kibana:
+    container_name: kibana
+    build:
+      context: ./kibana
+    depends_on:
+      - es-coord
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es-coord:9200
+    ports:
+      - "5601:5601"
+    networks:
+      - logs-network
 
 networks:
   logs-network:
