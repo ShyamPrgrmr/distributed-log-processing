@@ -209,4 +209,6 @@ docker network rm logs-network
 ## 🧠 Maintained By
 
 Shyam Pradhan
+```bash
 Feel free to fork, experiment, and extend 🚀
+```
