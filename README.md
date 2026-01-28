@@ -9,21 +9,8 @@ It simulates application logs, ships them via Fluentd to Kafka, processes them w
 
 **Flow:**
 
-```
+![Architecture Diagram](Flow Diagram.drawio.svg)
 
-Log Generator
-↓ (shared volume)
-Fluentd
-↓
-Kafka (KRaft mode)
-↓
-Logstash
-↓
-Elasticsearch (Coordination + Data Node)
-↓
-Kibana
-
-```
 
 ---
 
