@@ -93,8 +93,8 @@ docker volume create es-data
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/ShyamPrgrmr/distributed-log-processing.git
+cd distributed-log-processing
 ```
 
 ---
