@@ -1,7 +1,7 @@
 # Logs Infrastructure – Docker Compose Setup
 
 This project sets up a **log ingestion and processing pipeline** using Docker Compose.  
-It simulates application logs, ships them via Fluentd to Kafka, processes them with Logstash, and finally indexes them into Elasticsearch.
+It simulates application logs, ships them via Fluentd to Kafka, processes them with Logstash, and finally indexes them into Elasticsearch and Kibana.
 
 ---
 
@@ -20,6 +20,8 @@ Kafka (KRaft mode)
 Logstash
 ↓
 Elasticsearch (Coordination + Data Node)
+↓
+Kibana
 
 ```
 
@@ -198,7 +200,6 @@ docker network rm logs-network
 
 ## 🚀 Next Improvements (Optional)
 
-* Add Kibana
 * Add Kafka UI (AKHQ / Kafdrop)
 * Add Elasticsearch index lifecycle policies
 * Scale Kafka brokers
