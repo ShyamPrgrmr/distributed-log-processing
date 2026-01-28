@@ -9,8 +9,7 @@ It simulates application logs, ships them via Fluentd to Kafka, processes them w
 
 **Flow:**
 
-![Architecture Diagram](Flow Diagram.drawio.svg)
-
+![Architecture Diagram](Flow%20Diagram.drawio.svg)
 
 ---
 
