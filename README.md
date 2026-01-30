@@ -3,7 +3,7 @@
 This project sets up a **log ingestion and processing pipeline** using Docker Compose.  
 It simulates application logs, ships them via Fluentd to Kafka, processes them with Logstash, and finally indexes them into Elasticsearch and Kibana.
 
-Read more about this project [here](https://medium.com/@shyampradhan/developing-multithreaded-load-balancer-in-java-aea1f6d236cc).
+Read more about this project [here](https://medium.com/@shyampradhan/designing-a-distributed-logging-architecture-using-fluentd-kafka-logstash-and-elasticsearch-61defae34e77).
 
 ---
 
